@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nundy.cn/"/>
-  <updated>2018-10-19T09:04:08.000Z</updated>
+  <updated>2018-10-22T03:40:03.000Z</updated>
   <id>http://nundy.cn/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BEM命名及其在SCSS中的实践</title>
+    <link href="http://nundy.cn/2018/10/22/BEM%E5%91%BD%E5%90%8D%E5%8F%8A%E5%85%B6%E5%9C%A8SCSS%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://nundy.cn/2018/10/22/BEM命名及其在SCSS中的实践/</id>
+    <published>2018-10-22T11:39:18.000Z</published>
+    <updated>2018-10-22T03:40:03.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="SCSS" scheme="http://nundy.cn/tags/SCSS/"/>
+    
+      <category term="BEM" scheme="http://nundy.cn/tags/BEM/"/>
+    
+  </entry>
   
   <entry>
     <title>喝着阔落就把PHP环境搭好了~</title>
