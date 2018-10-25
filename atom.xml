@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nundy.cn/"/>
-  <updated>2018-10-25T11:15:21.000Z</updated>
+  <updated>2018-10-25T12:29:52.000Z</updated>
   <id>http://nundy.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Charles 对手机进行代理调试</title>
+    <link href="http://nundy.cn/2018/10/22/%E4%BD%BF%E7%94%A8Charles%E5%AF%B9%E6%89%8B%E6%9C%BA%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%90%86%E8%B0%83%E8%AF%95/"/>
+    <id>http://nundy.cn/2018/10/22/使用Charles对手机进行代理调试/</id>
+    <published>2018-10-22T11:39:18.000Z</published>
+    <updated>2018-10-25T12:29:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在一些需求中，NA 端会通过 WebView 嵌套 Wap 的一些页面。。。</p><p>逼的我们这些前端仔没法调试，还得干起抓包的工作，妈妈咪呀 ~</p><a id="more"></a><p>对于 Charles 来说，想要使用它，首先得进行安装证书，电脑和手机都得安装！</p><h6 id="MAC-或-Windows-安装"><a href="#MAC-或-Windows-安装" class="headerlink" title="MAC 或 Windows 安装"></a>MAC 或 Windows 安装</h6><p>1、点击 Help — SSL Proxying — Install Charles Root Certificate</p><p>2、在打开的钥匙串中找到 Charles Proxy 双击，在’信任选项中’，全部调整为信任</p><h6 id="手机安装"><a href="#手机安装" class="headerlink" title="手机安装"></a>手机安装</h6><p>(crt 小米6、cer、pem save)</p><p>1、手机打开浏览器，输入 ‘chls.pro/ssl’ 下载并安装证书</p><p>2、如果无法安装，则点击 ‘Save Charles Root Certificate’，保存下来一个.pem的证书，传输到手机，更改后缀名为 .crt，然后双击安装</p><h6 id="代理手机"><a href="#代理手机" class="headerlink" title="代理手机"></a>代理手机</h6><p>1、手机与电脑连接到同一局域网</p><p>2、打开手机 wifi，在高级选项中，点击手动设置代理</p><p>3、远程地址设置为电脑在局域网中的 IP，端口号为 8888</p><h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p>1、手机访问网页，若 Charles 可以监听到流量，则证明代理成功</p><h5 id="将手机流量转到测试环境"><a href="#将手机流量转到测试环境" class="headerlink" title="将手机流量转到测试环境"></a>将手机流量转到测试环境</h5><p>1、点击 Tools — Map Remote</p><p>2、Add 添加代理，输入需要过滤的 URL,以及需要代理的机器即可</p><p>先简单记录一下，还未详细整理</p><p>细节未完善，对于 IOS 、小米等手机来说，还需要根据各自的特点，在手机安全设置中修改一些内容。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在一些需求中，NA 端会通过 WebView 嵌套 Wap 的一些页面。。。&lt;/p&gt;
+&lt;p&gt;逼的我们这些前端仔没法调试，还得干起抓包的工作，妈妈咪呀 ~&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Charles" scheme="http://nundy.cn/tags/Charles/"/>
+    
+  </entry>
   
   <entry>
     <title>iTerm2 + Oh my zsh 最佳实践</title>
