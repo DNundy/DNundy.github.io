@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nundy.cn/"/>
-  <updated>2018-10-26T02:45:50.000Z</updated>
+  <updated>2018-10-26T02:48:00.000Z</updated>
   <id>http://nundy.cn/</id>
   
   <author>
@@ -21,16 +21,13 @@
     <link href="http://nundy.cn/2018/10/26/MySql-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://nundy.cn/2018/10/26/MySql-遇到的问题/</id>
     <published>2018-10-26T10:19:49.000Z</published>
-    <updated>2018-10-26T02:45:50.000Z</updated>
+    <updated>2018-10-26T02:48:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="The-server-requested-authentication-method-unknown-to-the-client"><a href="#The-server-requested-authentication-method-unknown-to-the-client" class="headerlink" title="The server requested authentication method unknown to the client"></a>The server requested authentication method unknown to the client</h4><p>描述：Mysql 安装了最新版本8.0.11后创建用户并授权后，授权的用户连接数据库提示如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The server requested authentication method unknown to the client</span><br></pre></td></tr></table></figure><p>原因：新老版本Mysql账号密码解锁机制不一致导致</p><p>解决：</p><p>1、删除创建的用户和授权，修改 mysql 配置文件，将其变为原来的验证方式，然后重新创建用户并授权即可,配置文件修改如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">default_authentication_plugin=mysql_native_password</span><br></pre></td></tr></table></figure><p>2、使用指令修改</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p </span><br><span class="line">use mysql;</span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;密码&apos;;</span><br></pre></td></tr></table></figure><h4 id="zsh-command-not-found-mysql"><a href="#zsh-command-not-found-mysql" class="headerlink" title="zsh: command not found: mysql"></a>zsh: command not found: mysql</h4><p>描述：Mac 安装 Mysql 后提示命令找不到</p><p>原因：当前 shell 找不到 Mysql 指令</p><p>解决：</p><p>1、因为我的 shell 用的是 zsh，所以修改以下文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br></pre></td></tr></table></figure><p>添加以下语句，导出 mysql</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:/usr/local/mysql/bin</span><br></pre></td></tr></table></figure><p>之后使用 source 执行一下文件，使其生效，否则重启后生效</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>记录 Mysql 操作中遇到的一些问题 ！</p><a id="more"></a><h4 id="The-server-requested-authentication-method-unknown-to-the-client"><a href="#The-server-requested-authentication-method-unknown-to-the-client" class="headerlink" title="The server requested authentication method unknown to the client"></a>The server requested authentication method unknown to the client</h4><p>描述：Mysql 安装了最新版本8.0.11后创建用户并授权后，授权的用户连接数据库提示如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The server requested authentication method unknown to the client</span><br></pre></td></tr></table></figure><p>原因：新老版本Mysql账号密码解锁机制不一致导致</p><p>解决：</p><p>1、删除创建的用户和授权，修改 mysql 配置文件，将其变为原来的验证方式，然后重新创建用户并授权即可,配置文件修改如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">default_authentication_plugin=mysql_native_password</span><br></pre></td></tr></table></figure><p>2、使用指令修改</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p </span><br><span class="line">use mysql;</span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;密码&apos;;</span><br></pre></td></tr></table></figure><h4 id="zsh-command-not-found-mysql"><a href="#zsh-command-not-found-mysql" class="headerlink" title="zsh: command not found: mysql"></a>zsh: command not found: mysql</h4><p>描述：Mac 安装 Mysql 后提示命令找不到</p><p>原因：当前 shell 找不到 Mysql 指令</p><p>解决：</p><p>1、因为我的 shell 用的是 zsh，所以修改以下文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br></pre></td></tr></table></figure><p>添加以下语句，导出 mysql</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$&#123;PATH&#125;:/usr/local/mysql/bin</span><br></pre></td></tr></table></figure><p>之后使用 source 执行一下文件，使其生效，否则重启后生效</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h4 id=&quot;The-server-requested-authentication-method-unknown-to-the-client&quot;&gt;&lt;a href=&quot;#The-server-requested-authentication-method-unknown-to-th
-      
+      &lt;p&gt;记录 Mysql 操作中遇到的一些问题 ！&lt;/p&gt;
     
     </summary>
     
@@ -38,27 +35,6 @@
       <category term="Mysql" scheme="http://nundy.cn/tags/Mysql/"/>
     
       <category term="Mac" scheme="http://nundy.cn/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 Charles 对手机进行代理调试</title>
-    <link href="http://nundy.cn/2018/10/22/%E4%BD%BF%E7%94%A8Charles%E5%AF%B9%E6%89%8B%E6%9C%BA%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%90%86%E8%B0%83%E8%AF%95/"/>
-    <id>http://nundy.cn/2018/10/22/使用Charles对手机进行代理调试/</id>
-    <published>2018-10-22T11:39:18.000Z</published>
-    <updated>2018-10-25T12:29:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在一些需求中，NA 端会通过 WebView 嵌套 Wap 的一些页面。。。</p><p>逼的我们这些前端仔没法调试，还得干起抓包的工作，妈妈咪呀 ~</p><a id="more"></a><p>对于 Charles 来说，想要使用它，首先得进行安装证书，电脑和手机都得安装！</p><h6 id="MAC-或-Windows-安装"><a href="#MAC-或-Windows-安装" class="headerlink" title="MAC 或 Windows 安装"></a>MAC 或 Windows 安装</h6><p>1、点击 Help — SSL Proxying — Install Charles Root Certificate</p><p>2、在打开的钥匙串中找到 Charles Proxy 双击，在’信任选项中’，全部调整为信任</p><h6 id="手机安装"><a href="#手机安装" class="headerlink" title="手机安装"></a>手机安装</h6><p>(crt 小米6、cer、pem save)</p><p>1、手机打开浏览器，输入 ‘chls.pro/ssl’ 下载并安装证书</p><p>2、如果无法安装，则点击 ‘Save Charles Root Certificate’，保存下来一个.pem的证书，传输到手机，更改后缀名为 .crt，然后双击安装</p><h6 id="代理手机"><a href="#代理手机" class="headerlink" title="代理手机"></a>代理手机</h6><p>1、手机与电脑连接到同一局域网</p><p>2、打开手机 wifi，在高级选项中，点击手动设置代理</p><p>3、远程地址设置为电脑在局域网中的 IP，端口号为 8888</p><h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p>1、手机访问网页，若 Charles 可以监听到流量，则证明代理成功</p><h5 id="将手机流量转到测试环境"><a href="#将手机流量转到测试环境" class="headerlink" title="将手机流量转到测试环境"></a>将手机流量转到测试环境</h5><p>1、点击 Tools — Map Remote</p><p>2、Add 添加代理，输入需要过滤的 URL,以及需要代理的机器即可</p><p>先简单记录一下，还未详细整理</p><p>细节未完善，对于 IOS 、小米等手机来说，还需要根据各自的特点，在手机安全设置中修改一些内容。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在一些需求中，NA 端会通过 WebView 嵌套 Wap 的一些页面。。。&lt;/p&gt;
-&lt;p&gt;逼的我们这些前端仔没法调试，还得干起抓包的工作，妈妈咪呀 ~&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Charles" scheme="http://nundy.cn/tags/Charles/"/>
     
   </entry>
   
@@ -84,6 +60,29 @@
       <category term="iTerm2" scheme="http://nundy.cn/tags/iTerm2/"/>
     
       <category term="Oh my zsh" scheme="http://nundy.cn/tags/Oh-my-zsh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Charles 对手机进行代理调试</title>
+    <link href="http://nundy.cn/2018/10/22/%E4%BD%BF%E7%94%A8Charles%E5%AF%B9%E6%89%8B%E6%9C%BA%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%90%86%E8%B0%83%E8%AF%95/"/>
+    <id>http://nundy.cn/2018/10/22/使用Charles对手机进行代理调试/</id>
+    <published>2018-10-22T11:39:18.000Z</published>
+    <updated>2018-10-26T02:46:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在一些需求中，NA 端会通过 WebView 嵌套 Wap 的一些页面。。。</p><p>逼的我们这些前端仔没法调试，还得干起抓包的工作，妈妈咪呀 ~</p><a id="more"></a><p>对于 Charles 来说，想要使用它，首先得进行安装证书，电脑和手机都得安装！</p><h6 id="MAC-或-Windows-安装"><a href="#MAC-或-Windows-安装" class="headerlink" title="MAC 或 Windows 安装"></a>MAC 或 Windows 安装</h6><p>1、点击 Help — SSL Proxying — Install Charles Root Certificate</p><p>2、在打开的钥匙串中找到 Charles Proxy 双击，在’信任选项中’，全部调整为信任</p><h6 id="手机安装"><a href="#手机安装" class="headerlink" title="手机安装"></a>手机安装</h6><p>(crt 小米6、cer、pem save)</p><p>1、手机打开浏览器，输入 ‘chls.pro/ssl’ 下载并安装证书</p><p>2、如果无法安装，则点击 ‘Save Charles Root Certificate’，保存下来一个.pem的证书，传输到手机，更改后缀名为 .crt，然后双击安装</p><h6 id="代理手机"><a href="#代理手机" class="headerlink" title="代理手机"></a>代理手机</h6><p>1、手机与电脑连接到同一局域网</p><p>2、打开手机 wifi，在高级选项中，点击手动设置代理</p><p>3、远程地址设置为电脑在局域网中的 IP，端口号为 8888</p><h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p>1、手机访问网页，若 Charles 可以监听到流量，则证明代理成功</p><h5 id="将手机流量转到测试环境"><a href="#将手机流量转到测试环境" class="headerlink" title="将手机流量转到测试环境"></a>将手机流量转到测试环境</h5><p>1、点击 Tools — Map Remote</p><p>2、Add 添加代理，输入需要过滤的 URL,以及需要代理的机器即可</p><p>先简单记录一下，还未详细整理</p><p>细节未完善，对于 IOS 、小米等手机来说，还需要根据各自的特点，在手机安全设置中修改一些内容。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在一些需求中，NA 端会通过 WebView 嵌套 Wap 的一些页面。。。&lt;/p&gt;
+&lt;p&gt;逼的我们这些前端仔没法调试，还得干起抓包的工作，妈妈咪呀 ~&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Charles" scheme="http://nundy.cn/tags/Charles/"/>
+    
+      <category term="NA 端" scheme="http://nundy.cn/tags/NA-%E7%AB%AF/"/>
     
   </entry>
   
