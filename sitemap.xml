@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://nundy.cn/2018/10/22/iTerm2%20+%20Oh%20my%20zsh/</loc>
+    
+    <lastmod>2018-10-26T03:44:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://nundy.cn/2018/10/22/%E4%BD%BF%E7%94%A8Charles%E5%AF%B9%E6%89%8B%E6%9C%BA%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%90%86%E8%B0%83%E8%AF%95/</loc>
     
-    <lastmod>2018-10-26T02:49:17.000Z</lastmod>
+    <lastmod>2018-10-26T03:03:16.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://nundy.cn/2018/10/26/MySql-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2018-10-26T02:48:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://nundy.cn/2018/10/22/iTerm2%20+%20Oh%20my%20zsh/</loc>
-    
-    <lastmod>2018-10-25T11:15:21.000Z</lastmod>
     
   </url>
   
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>http://nundy.cn/2018/01/01/my-18/</loc>
+    <loc>http://nundy.cn/2017/08/05/https/</loc>
     
     <lastmod>2018-07-15T03:43:19.000Z</lastmod>
     
@@ -93,6 +93,13 @@
   </url>
   
   <url>
+    <loc>http://nundy.cn/2017/08/02/http-cache/</loc>
+    
+    <lastmod>2018-07-15T03:43:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://nundy.cn/2017/11/26/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-07-15T03:43:19.000Z</lastmod>
@@ -107,13 +114,6 @@
   </url>
   
   <url>
-    <loc>http://nundy.cn/2017/08/02/http-cache/</loc>
-    
-    <lastmod>2018-07-15T03:43:19.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://nundy.cn/2017/11/19/W3C%E6%A0%87%E5%87%86/</loc>
     
     <lastmod>2018-07-15T03:43:19.000Z</lastmod>
@@ -121,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://nundy.cn/2017/08/05/https/</loc>
+    <loc>http://nundy.cn/2018/01/01/my-18/</loc>
     
     <lastmod>2018-07-15T03:43:19.000Z</lastmod>
     
